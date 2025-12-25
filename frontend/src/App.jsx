@@ -3,7 +3,7 @@ import { io } from "socket.io-client";
 import axios from "axios";
 import { TrendingUp, Wallet, Briefcase, Zap, Activity, ArrowRight, CheckCircle, X } from "lucide-react";
 
-const socket = io("http://localhost:5000");
+const socket = io("https://stock-sim-cc1r.onrender.com");
 
 function App() {
   const USER_ID = "1"; 
