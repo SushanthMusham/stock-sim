@@ -39,14 +39,14 @@ function App() {
 
   async function fetchWallet() {
     try {
-      const res = await axios.get(`http://localhost:5000/api/user/${USER_ID}`);
+      const res = await axios.get(`https://stock-sim-cc1r.onrender.com/api/user/${USER_ID}`);
       setWallet(res.data.balance);
     } catch (err) { console.error("Error fetching wallet", err); }
   }
 
   async function fetchPortfolio() {
     try {
-      const res = await axios.get(`http://localhost:5000/api/portfolio/${USER_ID}`);
+      const res = await axios.get(`https://stock-sim-cc1r.onrender.com/api/portfolio/${USER_ID}`);
       setPortfolio(res.data);
     } catch (err) { console.error("Error fetching portfolio", err); }
   }
@@ -77,7 +77,7 @@ function App() {
     setQuantity(0);
 
     try {
-      await axios.post("http://localhost:5000/api/buy", {
+      await axios.post("https://stock-sim-cc1r.onrender.com/api/buy", {
         userId: USER_ID,
         stockSymbol: symbol.toUpperCase(),
         quantity: Number(quantity),
@@ -117,7 +117,7 @@ function App() {
     });
 
     try {
-      await axios.post("http://localhost:5000/api/sell", {
+      await axios.post("https://stock-sim-cc1r.onrender.com/api/sell", {
         userId: USER_ID,
         stockSymbol: sellStock.stock.symbol,
         quantity: Number(sellQuantity)
